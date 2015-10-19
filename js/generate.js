@@ -20,15 +20,16 @@ var lincoln = new Author('Abraham Lincoln');
 var malcolmx = new Author('Malcolm X');
 var misc = new Author('misc');
 var obama = new Author('Barak Obama');
+var truth = new Author('Sojourner Truth');
 var washington = new Author('Booker T. Washington');
 var wells = new Author('Ida B. Wells');
 var west = new Author('Cornel West');
 
 //array of objects
-var authors = [coates, douglass, dubois, garvey, hooks, kingjr, lincoln, malcolmx, misc, obama, washington, wells, west]
+var authors = [coates, douglass, dubois, garvey, hooks, kingjr, lincoln, malcolmx, misc, obama, truth, washington, wells, west]
 
 //generate a random number
-var random = Math.floor(Math.random() * (12 - 0 + 1) +0);
+var random = Math.floor(Math.random() * (13 - 0 + 1) +0);
 
 var randomAuthor = authors[random];
 
