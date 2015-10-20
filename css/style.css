@@ -1,0 +1,31 @@
+html {
+   display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+   display: -moz-box;      /* OLD: Firefox (buggy) */
+   display: -ms-flexbox;   /* MID: IE 10 */
+   display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
+   display: flex;          /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
+}
+
+body {
+   background-color: #a8b6bf;
+}
+
+header {
+   background-color: #c9d8c5;
+}
+
+h1 {
+   height: 10rem;
+}
+
+footer {
+   background: #7d4627;
+}
+
+#generatorform {
+   flex-direction: row;
+}
+
+#generatedtext {
+
+}
