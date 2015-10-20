@@ -65,6 +65,14 @@ var generatorStorage = JSON.stringify(userEntry);
 localStorage.setItem("select", generatorStorage);
 }
 
+function loadJSON() {
+  if (localStorage.getItem("select")) {
+    var getForm = localStorage.getItem("select");
+    getForm = JSON.parse(generatorStorage);
+  } else {
+  }
+};
+
 //Event Listener for 'Generate Ipsum' Button
 var generate = document.getElementById('generate');
 generate.addEventListener('click', clicked, false);
