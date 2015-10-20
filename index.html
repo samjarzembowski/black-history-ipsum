@@ -13,50 +13,51 @@
 
         <label>Chose an author:</label>
         <select id="authorname" name="authors">
-          <option value="">Black History Compilation</option>
-          <option value="">Ta-Nehisi Coates</option>
-          <option value="">Fredrick Douglas</option>
-          <option value="">W. E. B. Du Bois</option>
-          <option value="">Marcus Garvey</option>
-          <option value="">Bell Hooks</option>
-          <option value="">Martin Luther King Jr</option>
-          <option value="">Abraham Lincoln</option>
-          <option value="">Malcolm X</option>
-          <option value="">Barack Obama</option>
-          <option value="">Sojourner Truth</option>
-          <option value="">Booker T. Washington</option>
-          <option value="">Ida B Wells</option>
-          <option value="">Cornel West</option>
+          <option value="misc">Black History Compilation</option>
+          <option value="coates">Ta-Nehisi Coates</option>
+          <option value="douglas">Fredrick Douglas</option>
+          <option value="dubois">W. E. B. Du Bois</option>
+          <option value="garvey">Marcus Garvey</option>
+          <option value="hooks">Bell Hooks</option>
+          <option value="kingjr">Martin Luther King Jr</option>
+          <option value="lincoln">Abraham Lincoln</option>
+          <option value="malcolmx">Malcolm X</option>
+          <option value="obama">Barack Obama</option>
+          <option value="truth">Sojourner Truth</option>
+          <option value="washington">Booker T. Washington</option>
+          <option value="wells">Ida B Wells</option>
+          <option value="west">Cornel West</option>
+          <option value="random">Random</option>
         </select><br>
         <br>
 
         <label>Quantity:</label>
-        <input type="text" name="" value="" ><br>
+        <input type="text" name="" value="" id="quantity"><br>
         <br>
 
-        <input type="radio" name="" value="" >
-        <label>Paragraph</label>
+        <input type="radio" name="q" id="para" value="" >
+        <label>Paragraphs</label>
         <br>
-        <input type="radio" name="" value="" >
-        <label>Word</label>
+        <input type="radio" name="q" id="words" value="" >
+        <label>Words</label>
         <br>
         <br>
 
-        <input type="checkbox" name="" value="" >
+        <input type="checkbox" name="" id="pTag" value="ptags" >
         <label>Add paragraph tags </label><br>
         <br>
 
         <label>Font Choice: </label><br>
         <select id="fontname">
-          <option value="">Lora</option>
-          <option value="">Poiret One</option>
-          <option value="">Oxygen</option>
-          <option value="">Changa One</option>
-          <option value="">Permanent Marker</option>
+          <option value="lora">Lora</option>
+          <option value="poiret1">Poiret One</option>
+          <option value="o2">Oxygen</option>
+          <option value="changa1">Changa One</option>
+          <option value="pmarker">Permanent Marker</option>
         </select><br>
         <br>
 
-        <button><img src="img/?" alt="Generate" width="30" height="20" /> Generate Ipsum </button>
+        <button id="generate"><img src="img/?" alt="Generate" width="30" height="20" /> Generate Ipsum </button>
         <input type="hidden" name="" value="" /><br>
         <br>
 
@@ -66,5 +67,6 @@
     <section id="">
       <p>Generated content here.</p>
     </section>
+    <script src="js/generate.js" type="text/javascript" charset="utf-8" async defer></script>
   </body>
 </html>
