@@ -60,8 +60,10 @@ var clicked = function(event) {
 
   console.log(formAuthor, formQuantity, formParaWords, formPTag, formFont);
   var userEntry = [formAuthor, formQuantity, formParaWords, formPTag, formFont]
-}
 
+var generatorStorage = JSON.stringify(userEntry);
+localStorage.setItem("select", generatorStorage);
+}
 
 //Event Listener for 'Generate Ipsum' Button
 var generate = document.getElementById('generate');
