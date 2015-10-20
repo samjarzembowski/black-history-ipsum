@@ -34,8 +34,6 @@ var random = Math.floor(Math.random() * (13 - 0 + 1) +0);
 var randomAuthor = authors[random];
 
 
-
-
 //this function will run onClick.  The meat of this js.  Needs to log the form data for
 //parameters, grab text & manipulate it based on those params, then feed it to html.  Also save these (in
 //an array) choices to localStorage.
@@ -44,6 +42,7 @@ var clicked = function(event) {
   //Following Lines assign variables to user inputs in the html form, Logs to console and places them in an array.
   var formAuthor = document.getElementById('authorname').value;
   var formQuantity = document.getElementById('quantity').value;
+  //formQuantity = parseInt(formQuantity);
   if (document.getElementById('para').checked) {
     var formParaWords = "Paragraphs";
     } else if (document.getElementById('words').checked) {
@@ -61,19 +60,93 @@ var clicked = function(event) {
   console.log(formAuthor, formQuantity, formParaWords, formPTag, formFont);
   var userEntry = [formAuthor, formQuantity, formParaWords, formPTag, formFont]
 
-var generatorStorage = JSON.stringify(userEntry);
-localStorage.setItem("select", generatorStorage);
+  var generatorStorage = JSON.stringify(userEntry);
+  localStorage.setItem("select", generatorStorage);
+  //localStorage(("select" + num), generatorStorage);
+
 }
 
-function loadJSON() {
+//check local storage for form content and repopulate dropdown menue of authors
+var authors = document.getElementById('authorname');
+
+function fillAuthor() {
   if (localStorage.getItem("select")) {
-    var getForm = localStorage.getItem("select");
-    getForm = JSON.parse(generatorStorage);
-  } else {
+    var getForm = JSON.parse(localStorage.getItem("select"));
+    if (getForm[0]) {
+      for (var i in authors) {
+        if (authors[i].value === getForm[0]) {
+          authors[i].selected = true;
+          return;
+        }
+      }
+    }
+  }
+}
+fillAuthor();
+
+//check local storage for form content and repopulate par or word quantity
+var formQuant = document.getElementById('quantity');
+
+function keepQuantity() {
+  if (localStorage.getItem("select")) {
+    var getForm = JSON.parse(localStorage.getItem("select"));
+    if (getForm[1]) {
+      formQuant.selected = "selected";
+    }
   }
 };
+keepQuantity();
+
+//check local storage for form content and repopulate word or paragraph radio button
+var getPar = document.getElementById('para');
+var getWord = document.getElementById('words');
+
+function keepParWord() {
+  if (localStorage.getItem("select")) {
+    var getForm = localStorage.getItem("select");
+    getForm = JSON.parse(getForm);
+    if (getForm[2]) {
+      getPar.checked = true;
+    } else if (getForm[2]) {
+      getWord.checked = true;
+    }
+  }
+};
+
+keepParWord();
+
+//check local storage for form content and repopulate checkbox
+var checkBox = document.getElementById('pTag');
+
+function fillCheckbox() {
+  if (localStorage.getItem("select")) {
+    var getForm = localStorage.getItem("select");
+    getForm = JSON.parse(getForm);
+    if (getForm[3]) {
+      checkBox.checked = true;
+    }
+  }
+};
+fillCheckbox();
+
+//check local storage for form content and repopulate dropdown menue for fonts
+var fonts = document.getElementById('fontname');
+
+function keepFont() {
+  if (localStorage.getItem("select")) {
+    var getForm = JSON.parse(localStorage.getItem("select"));
+    if (getForm[4]) {
+      for (var i in fonts) {
+        if (fonts[i].value === getForm[4]) {
+          fonts[i].selected = true;
+          return;
+        }
+      }
+    }
+  }
+}
+keepFont();
 
 //Event Listener for 'Generate Ipsum' Button
 var generate = document.getElementById('generate');
 generate.addEventListener('click', clicked, false);
-
