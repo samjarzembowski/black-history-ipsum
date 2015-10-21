@@ -77,16 +77,17 @@ var clicked = function(event) {
   //console.log(chunksLength);
 
   if (formParaWords === "Paragraphs" && formPTag) {
-    //take str and split it into num parts and add ptags
+
 
   } else if (formParaWords === "Words" && formPTag) {
     console.log(str)
     //take str and split it into a new string with only num words and wrap it in ptags?
     var splitStr = str.split(" ").splice(0,num).join(" ");
     str = "&lt;p&gt" + splitStr + "&lt/p&gt";
+
   } else if (formParaWords === "Paragraphs") {
-    for (var i = 0; i < formQuantity; i++) {
-      var str1 = str.split(" ").splice(0,chunksLength).join(" ");
+    for (var i = 0; i < formQuantity.length; i++) {
+
     }
   } else if (formParaWords === "Words") {
     str = str.split(" ").splice(0,num).join(" ");
