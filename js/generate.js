@@ -70,22 +70,26 @@ var clicked = function(event) {
       // console.log(formAuthor);
   };
 
-  var counter = 0
+  //var counter = 0
   var num = formQuantity;
   var font = formFont;
   var placement = document.getElementById('generatedtext');
 
   var wordCount = str.match(/(\w+)/g).length;
-  console.log(wordCount);
+  //console.log(wordCount);
 
-  if (formParaWords === "Paragraphs") {
-    //take str and split it into num parts
+  if (formParaWords === "Paragraphs" && formPTag) {
+    //take str and split it into num parts and add ptags
 
-    //force <p>tags in nested if?
-  } else {
-    //take str and split it into a new string with only num words
+  } else if (formParaWords === "Words" && formPTag) {
+    //take str and split it into a new string with only num words and wrap it in ptags?
+    str = str.split(" ").splice(0,num).join(" ");
+    str = "&lt;p&gt" + str + "&lt/p&gt"
+  } else if (formParaWords === "Paragraphs") {
 
-    //force <p>tags in nested if?
+  } else if (formParaWords === "Words") {
+    str = str.split(" ").splice(0,num).join(" ");
+
   };
 
   //assign section id='generatedtext' a classname based on font choice
