@@ -90,7 +90,7 @@ function keepQuantity() {
   if (localStorage.getItem("select")) {
     var getForm = JSON.parse(localStorage.getItem("select"));
     if (getForm[1]) {
-      formQuant.selected = "selected";
+      formQuant.value = getForm[1]
     }
   }
 };
