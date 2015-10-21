@@ -42,7 +42,6 @@ var clicked = function(event) {
   //Following Lines assign variables to user inputs in the html form, Logs to console and places them in an array.
   var formAuthor = document.getElementById('authorname').value;
   var formQuantity = document.getElementById('quantity').value;
-  //formQuantity = parseInt(formQuantity);
   if (document.getElementById('para').checked) {
     var formParaWords = "Paragraphs";
     } else if (document.getElementById('words').checked) {
@@ -105,14 +104,13 @@ function keepParWord() {
   if (localStorage.getItem("select")) {
     var getForm = localStorage.getItem("select");
     getForm = JSON.parse(getForm);
-    if (getForm[2]) {
+    if (getForm[2] === "Paragraphs") {
       getPar.checked = true;
-    } else if (getForm[2]) {
+    } else if (getForm[2] === "Words") {
       getWord.checked = true;
     }
   }
 };
-
 keepParWord();
 
 //check local storage for form content and repopulate checkbox
