@@ -1,7 +1,6 @@
 body {
    background-color: #c9d8c5;
    margin: 0px;
-
 }
 
 a {
@@ -13,17 +12,17 @@ a {
   text-align: center;
   font-size: 12px;
   font-family: 'lora';
-  position:
   height: 10px;
 }
 
 .nav {
-  height: 130px;
+  height: 200px;
+  text-align: center;
   background-color: cornsilk;
   font-family: 'lora';
   margin: 40px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .generatorbox {
@@ -73,3 +72,39 @@ a {
 .pmarker {
   font-family: 'Permanent Marker';
 }
+
+.team {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  column-width: 40%;
+  height: 100%;
+  padding: 10px;
+}
+
+.thead {
+  text-align: center;
+}
+
+.jasmine {
+  text-align: left;
+  width: 100%;
+  height: 580px;
+}
+
+.sam {
+  text-align: left;
+  width: 100%;
+  height: 580px;
+}
+
+.heidi {
+  text-align: left;
+  width: 100%;
+  height: 580px;
+}
+
+img {
+  text-align: center;
+}
+
