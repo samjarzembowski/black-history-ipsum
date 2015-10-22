@@ -1,31 +1,281 @@
-html {
-   display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
-   display: -moz-box;      /* OLD: Firefox (buggy) */
-   display: -ms-flexbox;   /* MID: IE 10 */
-   display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
-   display: flex;          /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
-}
-
 body {
-   background-color: #a8b6bf;
+   background-color: darkseagreen;
+   
 }
 
-header {
-   background-color: #c9d8c5;
+section.coates {
+   background-image: url("../img/coates-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 500px;
+   margin: 50px;
 }
 
-h1 {
-   height: 10rem;
+section.douglass {
+   background-image: url("../img/fred-douglass-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 700px;
+   margin: 50px;
 }
 
-footer {
-   background: #7d4627;
+section.dubois {
+   background-image: url("../img/webdubois-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 600px;
+   margin: 50px;
 }
 
-#generatorform {
-   flex-direction: row;
+section.garvey {
+   background-image: url("../img/garvey-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 700px;
+   margin: 50px;
 }
 
-#generatedtext {
-
+section.hooks {
+   background-image: url("../img/bhooks-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 700px;
+   margin: 50px;
 }
+
+section.king {
+   background-image: url("../img/mlk-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 500px;
+   margin: 50px;
+}
+
+section.lincoln {
+   background-image: url("../img/alincoln-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 500px;
+   margin: 50px;
+}
+
+section.malcolmx {
+   background-image: url("../img/mx-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 700px;
+   margin: 50px;
+}
+
+section.obama {
+   background-image: url("../img/bobama-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 500px;
+   margin: 50px;
+}
+
+section.truth {
+   background-image: url("../img/struth-background.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 750px;
+   margin: 50px;
+}
+
+section.washington {
+   background-image: url("../img/btwashington-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 600px;
+   margin: 50px;
+}
+
+section.wells {
+   background-image: url("../img/ibwells-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 600px;
+   margin: 50px;
+}
+
+section.west {
+   background-image: url("../img/cwest-background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 90%;
+   height: 500px;
+   margin: 50px;
+}
+ 
+
+
+article.coates {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.douglass {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.dubois {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-left: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.garvey {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.hooks {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.king {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.lincoln {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.malcolmx {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.obama {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-right: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.truth {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-left: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.washington {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-left: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.wells {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-left: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+article.west {
+   background-color: cornsilk;
+   background-position: relative;
+   width: 40%;  
+   border: 2px solid white;
+   padding: 10px;
+   margin: 50px;
+   margin-left: 55%;
+   text-align: center;
+   z-index: 50;
+}
+
+
