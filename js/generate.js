@@ -1,26 +1,26 @@
 // constructor
-var Author = function (name, shortname, text) {
-  this.name = name;
-  this.shortname = shortname;
-  this.text = text;
-}
-var str;
+// var Author = function (name, shortname, text) {
+//   this.name = name;
+//   this.shortname = shortname;
+//   this.text = text;
+// }
+// var str;
 //objects generated
-var douglass = new Author('Frederick Douglass');
-var dubois = new Author('W.E.B. DuBois');
-var garvey = new Author('Marcus Garvey');
-var hooks = new Author('Bell Hooks');
-var kingjr = new Author('Martin Luther King Jr');
-var lincoln = new Author('Abraham Lincoln');
-var malcolmx = new Author('Malcolm X');
-var obama = new Author('Barak Obama');
-var truth = new Author('Sojourner Truth');
-var washington = new Author('Booker T. Washington');
-var wells = new Author('Ida B. Wells');
-var west = new Author('Cornel West');
+// var douglass = new Author('Frederick Douglass');
+// var dubois = new Author('W.E.B. DuBois');
+// var garvey = new Author('Marcus Garvey');
+// var hooks = new Author('Bell Hooks');
+// var kingjr = new Author('Martin Luther King Jr');
+// var lincoln = new Author('Abraham Lincoln');
+// var malcolmx = new Author('Malcolm X');
+// var obama = new Author('Barak Obama');
+// var truth = new Author('Sojourner Truth');
+// var washington = new Author('Booker T. Washington');
+// var wells = new Author('Ida B. Wells');
+// var west = new Author('Cornel West');
 
 //array of objects
-var authorsArray = [coates, douglass, dubois, garvey, hooks, kingjr, lincoln, malcolmx, obama, truth, washington, wells, west]
+var authorsArray = [coates, douglas, dubois, garvey, hooks, kingjr, lincoln, malcolmx, obama, truth, washington, wells, west]
 
 //generate a random number
 //var random = Math.floor(Math.random() * (13 - 0 + 1) +0);
@@ -61,7 +61,7 @@ var clicked = function(event) {
   for (var i =0; i < authorsArray.length; i++) {
     if (formAuthor === authorsArray[i].shortname) {
       str = authorsArray[i].text;
-      console.log(str);
+      //console.log(str);
 
     };
   }
@@ -69,25 +69,40 @@ var clicked = function(event) {
   //var counter = 0
   var num = formQuantity;
   var font = formFont;
+  var parag;
   var placement = document.getElementById('generatedtext');
-
-  //var wordCount = str.match(/(\w+)/g).length;
-  //var chunksLength = Math.floor(wordCount/formQuantity);
-  //console.log(wordCount);
-  //console.log(chunksLength);
+  var j = [];
 
   if (formParaWords === "Paragraphs" && formPTag) {
     //take str and split it into num parts and add ptags
+    for (var i =0; i < authorsArray.length; i++) {
+        if (formAuthor === authorsArray[i].shortname) {
+          parag = authorsArray[i].para;
+        };
+      };
+      for (var i = 0; i < formQuantity; i++) {
+        j.push("<p>" + "&lt;p&gt" + parag[i] + "&lt/p&gt");
+      };
+      str = j;
+      console.log(str);
 
   } else if (formParaWords === "Words" && formPTag) {
-    console.log(str)
     //take str and split it into a new string with only num words and wrap it in ptags?
     var splitStr = str.split(" ").splice(0,num).join(" ");
     str = "&lt;p&gt" + splitStr + "&lt/p&gt";
+
   } else if (formParaWords === "Paragraphs") {
-    for (var i = 0; i < formQuantity; i++) {
-      var str1 = str.split(" ").splice(0,chunksLength).join(" ");
-    }
+      for (var i =0; i < authorsArray.length; i++) {
+        if (formAuthor === authorsArray[i].shortname) {
+          parag = authorsArray[i].para;
+        };
+      };
+      for (var i = 0; i < formQuantity; i++) {
+        j.push("<p>" + parag[i]);
+      };
+        str = j;
+        console.log(str);
+
   } else if (formParaWords === "Words") {
     str = str.split(" ").splice(0,num).join(" ");
 
