@@ -1,12 +1,45 @@
 body {
-   background-color: darkseagreen;
+   background-color: #c9d8c5;
 
 }
 
-.navbar {
+.nav {
+  background-color: cornsilk;
+  font-family: 'lora';
+  margin: 40px;
+  border-radius: 10px;
+  padding: 20px;
 
 }
 
+.generatorbox {
+  background-color: #c9d8c5;
+}
+
+.generator {
+  margin: 40px;
+  border-radius: 10px;
+  background-color: wheat;
+  padding: 20px;
+}
+
+.gentextbox {
+  background-color: #c9d8c5;
+  border-radius: 10px;
+}
+
+.gentext {
+  background-color: wheat;
+  padding: 20px;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+.footer {
+  background-color: #c9d8c5;
+  margin: 10px;
+  padding: 20px;
+}
 .o2 {
   font-family: 'Oxygen';
 }
