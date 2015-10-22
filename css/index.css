@@ -1,15 +1,29 @@
 body {
    background-color: #c9d8c5;
+   margin: 0px;
 
 }
 
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'lora';
+  position:
+  height: 10px;
+}
+
 .nav {
+  height: 130px;
   background-color: cornsilk;
   font-family: 'lora';
   margin: 40px;
   border-radius: 10px;
   padding: 20px;
-
 }
 
 .generatorbox {
