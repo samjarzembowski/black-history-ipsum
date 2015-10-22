@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>Black History Ipsum</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Lora|Poiret+One|Oxygen|Amatic+SC|Changa+One|Permanent+Marker' rel='stylesheet' type='text/css'>
     <script src="js/coates.js"></script>
-
     <script src="js/douglas.js"></script>
     <script src="js/dubois.js"></script>
     <script src="js/garvey.js"></script>
@@ -17,72 +18,84 @@
     <script src="js/truth.js"></script>
     <script src="js/washington.js"></script>
     <script src="js/wells.js"></script>
-
     <script src="js/west.js"></script>
 
   </head>
 
   <body>
-    <header>Header here.</header>
-    <section id="generatedform">
-      <form>
-        <p>This is where the copy will appear.</p><br>
 
-        <label>Choose an author:</label>
-        <select id="authorname" >
-          <option value="coates">Ta-Nehisi Coates</option>
-          <option value="douglas">Fredrick Douglas</option>
-          <option value="dubois">W. E. B. Du Bois</option>
-          <option value="garvey">Marcus Garvey</option>
-          <option value="hooks">Bell Hooks</option>
-          <option value="kingjr">Martin Luther King Jr</option>
-          <option value="lincoln">Abraham Lincoln</option>
-          <option value="malcolmx">Malcolm X</option>
-          <option value="obama">Barack Obama</option>
-          <option value="truth">Sojourner Truth</option>
-          <option value="washington">Booker T. Washington</option>
-          <option value="wells">Ida B Wells</option>
-          <option value="west">Cornel West</option>
-        </select><br>
-        <br>
+    <header class="header">
+      <div class="nav">
+        <h1><a href="index.html">The Black History Ipsum</a></h1>
+        <h2><a href="author.html">The Sources</a></h2>
+        <h2><a href="team.html">The Team</a></h2>
+      </div>
+    </header>
 
-        <label>Quantity:</label>
-        <input type="number" name="" value="" id="quantity"><br>
-        <br>
+    <div class="generatorbox">
+      <section id="generatedform" class="generator">
+        <form>
+          <p class="">There are many lorem ipsum generators. Many are silly or profane. We wanted to make a historically relevant ipsum generator that school students could use.</p><br>
 
-        <input type="radio" name="q" id="para" value="" >
-        <label>Paragraphs</label>
-        <br>
-        <input type="radio" name="q" id="words" value="" >
-        <label>Words</label>
-        <br>
-        <br>
+          <label>Choose an author:</label>
+          <select id="authorname" >
+            <option value="coates">Ta-Nehisi Coates</option>
+            <option value="douglas">Fredrick Douglas</option>
+            <option value="dubois">W. E. B. Du Bois</option>
+            <option value="garvey">Marcus Garvey</option>
+            <option value="hooks">Bell Hooks</option>
+            <option value="kingjr">Martin Luther King Jr</option>
+            <option value="lincoln">Abraham Lincoln</option>
+            <option value="malcolmx">Malcolm X</option>
+            <option value="obama">Barack Obama</option>
+            <option value="truth">Sojourner Truth</option>
+            <option value="washington">Booker T. Washington</option>
+            <option value="wells">Ida B Wells</option>
+            <option value="west">Cornel West</option>
+          </select><br>
+          <br>
 
-        <input type="checkbox" name="checkBox" id="pTag" value="ptags" >
-        <label>Add paragraph tags </label><br>
-        <br>
+          <label>Quantity:</label>
+          <input type="number" name="" value="" id="quantity"><br>
+          <br>
 
-        <label>Font Choice: </label><br>
-        <select id="fontname">
-          <option value="lora">Lora</option>
-          <option value="poiret1">Poiret One</option>
-          <option value="o2">Oxygen</option>
-          <option value="changa1">Changa One</option>
-          <option value="pmarker">Permanent Marker</option>
-        </select><br>
-        <br>
+          <input type="radio" name="q" id="para" value="" >
+          <label>Paragraphs</label>
+          <br>
+          <input type="radio" name="q" id="words" value="" >
+          <label>Words</label>
+          <br>
+          <br>
 
-        <button id="generate"><img src="img/?" alt="Generate" width="30" height="20" /> Generate Ipsum </button>
-        <input type="hidden" name="" value="" /><br>
-        <br>
+          <input type="checkbox" name="checkBox" id="pTag" value="ptags" >
+          <label>Add paragraph tags </label><br>
+          <br>
 
-      </form>
-    </section>
+          <label>Font Choice: </label><br>
+          <select id="fontname">
+            <option value="lora">Lora</option>
+            <option value="poiret1">Poiret One</option>
+            <option value="o2">Oxygen</option>
+            <option value="pmarker">Permanent Marker</option>
+          </select><br>
+          <br>
 
-    <section id="generatedtext">
-      <p>Generated content here.</p>
-    </section>
-    <script src="js/generate.js" type="text/javascript" charset="utf-8" async defer></script>
+          <button id="generate"><img src="img/?" alt="Generate" width="30" height="20" /> Generate Ipsum </button>
+          <input type="hidden" name="" value="" /><br>
+          <br>
+
+        </form>
+      </section>
+    </div>
+
+    <div class="gentext">
+      <section class="gentextbox" id="generatedtext">
+        <p><script src="js/generate.js" type="text/javascript" charset="utf-8" async defer></script></p>
+      </section>
+    </div>
+
   </body>
-  <footer>Footer here.</footer>
+
+  <footer class="footer">This website was a final project for Code Fellows Bootcamp, 2015.</footer>
+
 </html>
