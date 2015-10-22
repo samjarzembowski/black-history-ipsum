@@ -1,39 +1,30 @@
-//constructor
-var Author = function (name, path, p1, p2, p3, p4, p5) {
-  this.name = name;
-  this.path = path;
-  this.p1 = p1;
-  this.p2 = p2;
-  this.p3 = p3;
-  this.p4 = p4;
-  this.p5 = p5;
-}
-
+// constructor
+// var Author = function (name, shortname, text) {
+//   this.name = name;
+//   this.shortname = shortname;
+//   this.text = text;
+// }
+// var str;
 //objects generated
-var coates = new Author('Ta-Nehasi Coates');
-var douglass = new Author('Frederick Douglass');
-var dubois = new Author('W.E.B. DuBois');
-var garvey = new Author('Marcus Garvey');
-var hooks = new Author('Bell Hooks');
-var kingjr = new Author('Martin Luther King Jr');
-var lincoln = new Author('Abraham Lincoln');
-var malcolmx = new Author('Malcolm X');
-var misc = new Author('Black History Compilation');
-var obama = new Author('Barak Obama');
-var truth = new Author('Sojourner Truth');
-var washington = new Author('Booker T. Washington');
-var wells = new Author('Ida B. Wells');
-var west = new Author('Cornel West');
+// var douglass = new Author('Frederick Douglass');
+// var dubois = new Author('W.E.B. DuBois');
+// var garvey = new Author('Marcus Garvey');
+// var hooks = new Author('Bell Hooks');
+// var kingjr = new Author('Martin Luther King Jr');
+// var lincoln = new Author('Abraham Lincoln');
+// var malcolmx = new Author('Malcolm X');
+// var obama = new Author('Barak Obama');
+// var truth = new Author('Sojourner Truth');
+// var washington = new Author('Booker T. Washington');
+// var wells = new Author('Ida B. Wells');
+// var west = new Author('Cornel West');
 
 //array of objects
-var authors = [coates, douglass, dubois, garvey, hooks, kingjr, lincoln, malcolmx, misc, obama, truth, washington, wells, west]
+var authorsArray = [coates, douglas, dubois, garvey, hooks, kingjr, lincoln, malcolmx, obama, truth, washington, wells, west]
 
 //generate a random number
-var random = Math.floor(Math.random() * (13 - 0 + 1) +0);
-
-var randomAuthor = authors[random];
-
-
+//var random = Math.floor(Math.random() * (13 - 0 + 1) +0);
+//var randomAuthor = authors[random];
 
 
 //this function will run onClick.  The meat of this js.  Needs to log the form data for
@@ -43,6 +34,7 @@ var clicked = function(event) {
   event.preventDefault();
   //Following Lines assign variables to user inputs in the html form, Logs to console and places them in an array.
   var formAuthor = document.getElementById('authorname').value;
+  console.log(formAuthor);
   var formQuantity = document.getElementById('quantity').value;
   if (document.getElementById('para').checked) {
     var formParaWords = "Paragraphs";
@@ -60,10 +52,159 @@ var clicked = function(event) {
 
   console.log(formAuthor, formQuantity, formParaWords, formPTag, formFont);
   var userEntry = [formAuthor, formQuantity, formParaWords, formPTag, formFont]
-}
 
+  var generatorStorage = JSON.stringify(userEntry);
+  localStorage.setItem("select", generatorStorage);
+  //localStorage(("select" + num), generatorStorage);
+
+  //BEGIN IPSUM GENERATOR
+  for (var i =0; i < authorsArray.length; i++) {
+    if (formAuthor === authorsArray[i].shortname) {
+      str = authorsArray[i].text;
+      //console.log(str);
+
+    };
+  }
+
+  //var counter = 0
+  var num = formQuantity;
+  var font = formFont;
+  var parag;
+  var placement = document.getElementById('generatedtext');
+  var j = [];
+
+  if (formParaWords === "Paragraphs" && formPTag) {
+    //take str and split it into num parts and add ptags
+    for (var i =0; i < authorsArray.length; i++) {
+        if (formAuthor === authorsArray[i].shortname) {
+          parag = authorsArray[i].para;
+        };
+      };
+      for (var i = 0; i < formQuantity; i++) {
+        j.push("<p>" + "&lt;p&gt" + parag[i] + "&lt/p&gt");
+      };
+      str = j;
+      console.log(str);
+
+  } else if (formParaWords === "Words" && formPTag) {
+    //take str and split it into a new string with only num words and wrap it in ptags?
+    var splitStr = str.split(" ").splice(0,num).join(" ");
+    str = "&lt;p&gt" + splitStr + "&lt/p&gt";
+
+  } else if (formParaWords === "Paragraphs") {
+      for (var i =0; i < authorsArray.length; i++) {
+        if (formAuthor === authorsArray[i].shortname) {
+          parag = authorsArray[i].para;
+        };
+      };
+      for (var i = 0; i < formQuantity; i++) {
+        j.push("<p>" + parag[i]);
+      };
+        str = j;
+        console.log(str);
+
+  } else if (formParaWords === "Words") {
+    str = str.split(" ").splice(0,num).join(" ");
+
+  };
+
+  //assign section id='generatedtext' a classname based on font choice
+  if (formFont === "lora") {
+    document.getElementById('generatedtext').className = "lora";
+  } else if (formFont === "poiret1") {
+    document.getElementById('generatedtext').className = "poiret1"
+  } else if (formFont === "o2") {
+    document.getElementById('generatedtext').className = "o2";
+  } else if (formFont === "changa1") {
+    document.getElementById('generatedtext').className = "changa1";
+  } else if (formFont === "pmarker") {
+    document.getElementById('generatedtext').className = "pmarker";
+  }
+
+  placement.innerHTML = str;
+
+} //END OF CLICKED FUNCTION
+
+//check local storage for form content and repopulate dropdown menue of authors
+var authors = document.getElementById('authorname');
+
+function fillAuthor() {
+  if (localStorage.getItem("select")) {
+    var getForm = JSON.parse(localStorage.getItem("select"));
+    if (getForm[0]) {
+      for (var i in authors) {
+        if (authors[i].value === getForm[0]) {
+          authors[i].selected = true;
+          return;
+        }
+      }
+    }
+  }
+}
+fillAuthor();
+
+//check local storage for form content and repopulate par or word quantity
+var formQuant = document.getElementById('quantity');
+
+function keepQuantity() {
+  if (localStorage.getItem("select")) {
+    var getForm = JSON.parse(localStorage.getItem("select"));
+    if (getForm[1]) {
+      formQuant.value = getForm[1]
+    }
+  }
+};
+keepQuantity();
+
+//check local storage for form content and repopulate word or paragraph radio button
+var getPar = document.getElementById('para');
+var getWord = document.getElementById('words');
+
+function keepParWord() {
+  if (localStorage.getItem("select")) {
+    var getForm = localStorage.getItem("select");
+    getForm = JSON.parse(getForm);
+    if (getForm[2] === "Paragraphs") {
+      getPar.checked = true;
+    } else if (getForm[2] === "Words") {
+      getWord.checked = true;
+    }
+  }
+};
+keepParWord();
+
+//check local storage for form content and repopulate checkbox
+var checkBox = document.getElementById('pTag');
+
+function fillCheckbox() {
+  if (localStorage.getItem("select")) {
+    var getForm = localStorage.getItem("select");
+    getForm = JSON.parse(getForm);
+    if (getForm[3]) {
+      checkBox.checked = true;
+    }
+  }
+};
+fillCheckbox();
+
+//check local storage for form content and repopulate dropdown menue for fonts
+var fonts = document.getElementById('fontname');
+
+function keepFont() {
+  if (localStorage.getItem("select")) {
+    var getForm = JSON.parse(localStorage.getItem("select"));
+    if (getForm[4]) {
+      for (var i in fonts) {
+        if (fonts[i].value === getForm[4]) {
+          fonts[i].selected = true;
+          return;
+        }
+      }
+    }
+  }
+}
+keepFont();
 
 //Event Listener for 'Generate Ipsum' Button
 var generate = document.getElementById('generate');
 generate.addEventListener('click', clicked, false);
-

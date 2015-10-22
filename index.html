@@ -4,6 +4,22 @@
     <title>Black History Ipsum</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Lora|Poiret+One|Oxygen|Amatic+SC|Changa+One|Permanent+Marker' rel='stylesheet' type='text/css'>
+    <script src="js/coates.js"></script>
+
+    <script src="js/douglas.js"></script>
+    <script src="js/dubois.js"></script>
+    <script src="js/garvey.js"></script>
+    <script src="js/hooks.js"></script>
+    <script src="js/kingjr.js"></script>
+    <script src="js/lincoln.js"></script>
+    <script src="js/malcolmx.js"></script>
+    <script src="js/obama.js"></script>
+    <script src="js/truth.js"></script>
+    <script src="js/washington.js"></script>
+    <script src="js/wells.js"></script>
+
+    <script src="js/west.js"></script>
+
   </head>
 
   <body>
@@ -12,9 +28,8 @@
       <form>
         <p>This is where the copy will appear.</p><br>
 
-        <label>Chose an author:</label>
-        <select id="authorname" name="authors">
-          <option value="misc">Black History Compilation</option>
+        <label>Choose an author:</label>
+        <select id="authorname" >
           <option value="coates">Ta-Nehisi Coates</option>
           <option value="douglas">Fredrick Douglas</option>
           <option value="dubois">W. E. B. Du Bois</option>
@@ -28,12 +43,11 @@
           <option value="washington">Booker T. Washington</option>
           <option value="wells">Ida B Wells</option>
           <option value="west">Cornel West</option>
-          <option value="random">Random</option>
         </select><br>
         <br>
 
         <label>Quantity:</label>
-        <input type="text" name="" value="" id="quantity"><br>
+        <input type="number" name="" value="" id="quantity"><br>
         <br>
 
         <input type="radio" name="q" id="para" value="" >
@@ -44,7 +58,7 @@
         <br>
         <br>
 
-        <input type="checkbox" name="" id="pTag" value="ptags" >
+        <input type="checkbox" name="checkBox" id="pTag" value="ptags" >
         <label>Add paragraph tags </label><br>
         <br>
 
