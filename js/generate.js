@@ -1,40 +1,12 @@
-// constructor
-// var Author = function (name, shortname, text) {
-//   this.name = name;
-//   this.shortname = shortname;
-//   this.text = text;
-// }
-// var str;
-//objects generated
-// var douglass = new Author('Frederick Douglass');
-// var dubois = new Author('W.E.B. DuBois');
-// var garvey = new Author('Marcus Garvey');
-// var hooks = new Author('Bell Hooks');
-// var kingjr = new Author('Martin Luther King Jr');
-// var lincoln = new Author('Abraham Lincoln');
-// var malcolmx = new Author('Malcolm X');
-// var obama = new Author('Barak Obama');
-// var truth = new Author('Sojourner Truth');
-// var washington = new Author('Booker T. Washington');
-// var wells = new Author('Ida B. Wells');
-// var west = new Author('Cornel West');
-
 //array of objects
 var authorsArray = [coates, douglas, dubois, garvey, hooks, kingjr, lincoln, malcolmx, obama, truth, washington, wells, west]
 
-//generate a random number
-//var random = Math.floor(Math.random() * (13 - 0 + 1) +0);
-//var randomAuthor = authors[random];
-
-
-//this function will run onClick.  The meat of this js.  Needs to log the form data for
-//parameters, grab text & manipulate it based on those params, then feed it to html.  Also save these (in
-//an array) choices to localStorage.
+//this function will run onClick. Logs the form data for localstorage, gets text data, and manipulates text based on form submission.
 var clicked = function(event) {
   event.preventDefault();
   //Following Lines assign variables to user inputs in the html form, Logs to console and places them in an array.
   var formAuthor = document.getElementById('authorname').value;
-  console.log(formAuthor);
+  //console.log(formAuthor);
   var formQuantity = document.getElementById('quantity').value;
   if (document.getElementById('para').checked) {
     var formParaWords = "Paragraphs";
@@ -50,19 +22,17 @@ var clicked = function(event) {
 
   var formFont = document.getElementById('fontname').value;
 
-  console.log(formAuthor, formQuantity, formParaWords, formPTag, formFont);
+  //console.log(formAuthor, formQuantity, formParaWords, formPTag, formFont);
   var userEntry = [formAuthor, formQuantity, formParaWords, formPTag, formFont]
 
   var generatorStorage = JSON.stringify(userEntry);
   localStorage.setItem("select", generatorStorage);
-  //localStorage(("select" + num), generatorStorage);
 
   //BEGIN IPSUM GENERATOR
   for (var i =0; i < authorsArray.length; i++) {
     if (formAuthor === authorsArray[i].shortname) {
       str = authorsArray[i].text;
       //console.log(str);
-
     };
   }
 
@@ -84,10 +54,10 @@ var clicked = function(event) {
         j.push("<p>" + "&lt;p&gt" + parag[i] + "&lt/p&gt");
       };
       str = j;
-      console.log(str);
+      //console.log(str);
 
   } else if (formParaWords === "Words" && formPTag) {
-    //take str and split it into a new string with only num words and wrap it in ptags?
+    //take str and split it into a new string with only num words and wrap it in ptags
     var splitStr = str.split(" ").splice(0,num).join(" ");
     str = "&lt;p&gt" + splitStr + "&lt/p&gt";
 
@@ -101,7 +71,7 @@ var clicked = function(event) {
         j.push("<p>" + parag[i]);
       };
         str = j;
-        console.log(str);
+        //console.log(str);
 
   } else if (formParaWords === "Words") {
     str = str.split(" ").splice(0,num).join(" ");
@@ -115,8 +85,6 @@ var clicked = function(event) {
     document.getElementById('generatedtext').className = "poiret1"
   } else if (formFont === "o2") {
     document.getElementById('generatedtext').className = "o2";
-  } else if (formFont === "changa1") {
-    document.getElementById('generatedtext').className = "changa1";
   } else if (formFont === "pmarker") {
     document.getElementById('generatedtext').className = "pmarker";
   }
